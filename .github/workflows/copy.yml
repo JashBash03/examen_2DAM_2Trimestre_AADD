@@ -30,4 +30,4 @@ jobs:
     - name: Execute command on VPS
       env:
         SSHPASS: ${{ secrets.SSH_PASSWORD }}
-      run: sshpass -e ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "pm2 stop examen && cd examen_AADD && git pull && npm install && pm2 start examen &"
+      run: sshpass -e ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "pm2 stop examen && cd examen_2DAM_2Trimestre_AADD && git pull && npm install && pm2 start examen &"
