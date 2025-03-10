@@ -1,6 +1,6 @@
 # examen_2DAM_2Trimestre_AADD
 
-## 1. Crear un servidor básico para un deploy y configurar archivo .yml con las claves que debe gestionar GitHub.
+## Crear un servidor implementando CORS, HTTPS y CD/CI mediante un dominio VPS levantado por el profesor.
 
 Creamos un servidor de express implementando y configurando Cors y HTTPS con el siguiente código en nuestro `server.js` (Dato importante: no olvidarse de descargar las dependencias con `npm i`):
 
