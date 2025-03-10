@@ -58,3 +58,5 @@ jobs:
 ```
 
 Una vez creado, procedemos a configurar los secretos en nuestro github con los mismos nombres que le hemos especificado en el archivo .yml
+
+![alt text](captura_secretos.png)

@@ -1,4 +1,4 @@
-name: Deploy to Linode
+name: Deploy to CI/CD
 
 on:
   push:
@@ -21,11 +21,13 @@ jobs:
 
     - name: Add remote host to known_hosts
       run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+    #- name: Copy files via SCP
 
-    - name: List files
-      run: ls -la
+      #env:
+      # SSHPASS: ${{ secrets.SSH_PASSWORD }}
+      # run: sshpass -e scp -r ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/root/website
 
-    - name: Copy files via SCP
+    - name: Execute command on VPS
       env:
         SSHPASS: ${{ secrets.SSH_PASSWORD }}
-      run: sshpass -e scp -r ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/root/website
+      run: sshpass -e ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "pm2 stop examen && cd examen_AADD && git pull && npm install && pm2 start examen &"
